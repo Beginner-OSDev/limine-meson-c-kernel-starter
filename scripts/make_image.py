@@ -10,6 +10,7 @@ out_iso, arch, kernel, cfg = sys.argv[1:]
 # Which EFI binary we need
 limine_bin = {
     "x86_64": "BOOTX64.EFI",
+    "riscv64": "BOOTRISCV64.EFI",
     "aarch64": "BOOTAA64.EFI",
 }[arch]
 

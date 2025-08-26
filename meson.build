@@ -66,6 +66,7 @@ defines = config['defines'] + [
 includes = include_directories([
   'res/include',
   'res/include/arch/@0@'.format(target_arch),
+  'res/include/arch/@0@/stdlib'.format(target_arch),
   ])
 
 common_src = [
@@ -74,13 +75,16 @@ common_src = [
 
 arch_src = {
   'x86_64': [
-    'src/arch/x86_64/boot.c'
+    'src/arch/x86_64/boot.c',
+    'src/arch/x86_64/utilities/khalt.c'
   ],
   'aarch64': [
-    'src/arch/aarch64/boot.c'
+    'src/arch/aarch64/boot.c',
+    'src/arch/aarch64/utilities/khalt.c'
   ],
   'riscv64': [
-    'src/arch/riscv64/boot.c'
+    'src/arch/riscv64/boot.c',
+    'src/arch/riscv64/utilities/khalt.c'
   ]
 }
 
